@@ -10,7 +10,7 @@ public class Submarino extends Vehiculo implements Acuatico  {
 		}
 	@Override
 	public double getProfundidad() {
-		// TODO Auto-generated method stub
+		
 		return profundidad;
 	}
 	
