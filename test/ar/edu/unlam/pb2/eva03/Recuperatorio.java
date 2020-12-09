@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeBatalla;
+
 public class Recuperatorio {
 
 	@Test
@@ -75,7 +77,7 @@ public class Recuperatorio {
 	}	
 	
 	@Test
-	public void queSePuedaPresentarBatallaTerrestre() throws VehiculoInexistente, VehiculoIncompatible {
+	public void queSePuedaPresentarBatallaTerrestre() throws VehiculoInexistente, VehiculoIncompatible, BatallaNoExista {
 		FuerzaArmada argentina = new FuerzaArmada();
 			
 		argentina.agregarVehiculo(new Tanque(5, "Renault FT"));
@@ -90,7 +92,7 @@ public class Recuperatorio {
 	}
 
 	@Test
-	public void queSePuedaPresentarBatallaNaval() throws VehiculoInexistente, VehiculoIncompatible {
+	public void queSePuedaPresentarBatallaNaval() throws VehiculoInexistente, VehiculoIncompatible, BatallaNoExista {
 		FuerzaArmada argentina = new FuerzaArmada();
 			
 		argentina.agregarVehiculo(new Submarino(8, "A-10"));
@@ -111,7 +113,7 @@ public class Recuperatorio {
 	}
 
 	@Test (expected = VehiculoIncompatible.class)
-	public void queSeNoSePuedaEnviarAUnaBatallaEnTierraUnBarco() throws VehiculoInexistente, VehiculoIncompatible {
+	public void queSeNoSePuedaEnviarAUnaBatallaEnTierraUnBarco() throws VehiculoInexistente, VehiculoIncompatible, BatallaNoExista {
 		FuerzaArmada argentina = new FuerzaArmada();
 			
 		argentina.agregarVehiculo(new Tanque(5, "Renault FT"));
@@ -126,7 +128,7 @@ public class Recuperatorio {
 	}
 	
 	@Test (expected = VehiculoInexistente.class)
-	public void queSeNoSePuedaEnviarAUnaBatallaUnVehiculoQueNoExista() throws VehiculoInexistente, VehiculoIncompatible {
+	public void queSeNoSePuedaEnviarAUnaBatallaUnVehiculoQueNoExista() throws VehiculoInexistente, VehiculoIncompatible, BatallaNoExista {
 		FuerzaArmada argentina = new FuerzaArmada();
 			
 		argentina.agregarVehiculo(new Tanque(5, "Renault FT"));

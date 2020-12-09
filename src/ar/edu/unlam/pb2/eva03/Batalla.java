@@ -7,13 +7,13 @@ import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeBatalla;
 
 
 public class Batalla {
-	private String nombre;
+	
 	private Double latitud;
 	private Double longitud;
 	private TipoDeBatalla tipo;
 	private Set<Vehiculo> vehiculosEnLaBatalla;
-	public Batalla(String nombre,Double latitud, Double longitud, TipoDeBatalla tipo) {
-		this.nombre = nombre;
+	public Batalla(Double latitud, Double longitud, TipoDeBatalla tipo) {
+		
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.tipo = tipo;
@@ -43,11 +43,10 @@ public class Batalla {
 	public void setVehiculosEnLaBatalla(Set<Vehiculo> vehiculosEnLaBatalla) {
 		this.vehiculosEnLaBatalla = vehiculosEnLaBatalla;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	
+	public Boolean agregoVehiculo(Vehiculo vehi) {
+		
+		return vehiculosEnLaBatalla.add(vehi);
 	}
 	
 	
